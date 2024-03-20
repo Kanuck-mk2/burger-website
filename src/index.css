@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  background-color: hsl(210, 0%, 5%);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 14px 5px #eb650c; 
+  }
+  50% {
+    box-shadow: 0 0 12px 5px #d6c610; 
+  }
+  100% {
+    box-shadow: 0 0 14px 5px #eb650c; 
+  }
+}
+
+.glow-border:hover {
+  animation: glow 5s ease-in-out infinite;
+}
+
+.text-gd {
+  font-family: 'Chewy', monospace;
+
+  
+  background: linear-gradient(145deg, #eb650c, #d6c610);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gd2 {
+  font-family: 'Lekton', 'sans-serif';
+
+  
+  background: linear-gradient(145deg, #eb650c, #d6c610);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bs-color {
+  background: linear-gradient(145deg, #eb650c, #d6c610);
+  color-scheme: linear-gradient(145deg, #eb650c, #d6c610);
+}
+.border-bs-color {
+  border-color: linear-gradient(145deg, #eb650c, #d6c610);
+}
+
