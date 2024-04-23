@@ -1,4 +1,6 @@
 import Category from './components/Category';
+import Footer from './components/Footer';
+
 import Home from './components/Home';
 import Menu from './components/Menu';
 import MenuMain from './components/MenuMain';
@@ -8,10 +10,12 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Home />
       <Menu />
       <MenuMain />
       <Category />
+      <Footer/>
     </>
   );
 }

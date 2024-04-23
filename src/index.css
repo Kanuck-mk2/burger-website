@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.root {
+  --background-color: linear-gradient(
+    145deg,
+    hsl(24, 90%, 48%),
+    hsl(260, 86%, 45%)
+  );
+  --foreground-color: hsl(222, 44, 0);
+  --primary-text-color: hsl(0, 0, 0);
+  --secondary-text-color: hsl(36, 79%, 52%);
+  --toggle-bg: hsl(222, 44, 0);
+  --toggle-fg: hsl(65, 34, 9);
+  --highlight-color: hsl(24, 90%, 48%);
+}
+
 * {
   scroll-behavior: smooth;
-  background-color: hsl(210, 0%, 5%);
+  background-color: hsl(0, 0%, 0%);
+}
+html, body{
+  overflow-x: hidden;
 }
 
 @keyframes glow {
   0% {
-    box-shadow: 0 0 14px 5px #eb650c; 
+    box-shadow: 0 0 14px 5px hsl(24, 90%, 48%);
   }
   50% {
-    box-shadow: 0 0 12px 5px #d6c610; 
+    box-shadow: 0 0 12px 5px #d6c610;
   }
   100% {
-    box-shadow: 0 0 14px 5px #eb650c; 
+    box-shadow: 0 0 14px 5px #eb650c;
   }
 }
 
@@ -26,17 +43,21 @@
 .text-gd {
   font-family: 'Chewy', monospace;
 
-  
   background: linear-gradient(145deg, #eb650c, #d6c610);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gd2 {
-  font-family: 'Lekton', 'sans-serif';
+  font-family: 'Sen', 'sans-serif';
 
-  
-  background: linear-gradient(145deg, #eb650c, #d6c610);
+  background: linear-gradient(145deg, hsl(24, 90%, 48%), hsl(55, 86%, 45%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-h:hover {
+  background: linear-gradient(145deg, hsl(24, 90%, 48%), hsl(55, 86%, 45%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -48,4 +69,3 @@
 .border-bs-color {
   border-color: linear-gradient(145deg, #eb650c, #d6c610);
 }
-

@@ -9,7 +9,9 @@ export default {
       sans: ['Sofia Sans Semi Condensed', 'sans-serif'],
       serif: ['Gluten', 'serif'],
       mono: ['Chewy', 'monospace'],
-      lek: ['Lekton', 'sans-serif']
+      lek: ['Lekton', 'sans-serif'],
+      sen: ['Sen', 'sans-serif']
+      
     },
     extend: {},
   },

@@ -14,6 +14,7 @@ const MenuMain: React.FC = () => {
   console.log(data);
 
   const [menuMain, setMenuMain] = useState<MenuItem[]>(data);
+
   const filterType = (category: string) => {
     setMenuMain(
       data.filter((item: string) => {
@@ -42,12 +43,12 @@ const MenuMain: React.FC = () => {
           transition: { duration: 1 },
         }}
       >
-        Top <strong className="text-gd text-4xl">Rated</strong> Menu Items
+        <strong className="text-gd text-4xl">Menu</strong>
       </motion.h1>
 
       <div className="flex flex-col lg:flex-row justify-between">
         <div>
-          <p className="font-bold font-lek text-white">Type Filter</p>
+          <p className="font-bold font-sen text-white">Type Filter</p>
           <motion.div
             className="flex justify-between flex-wrap"
             initial={{ opacity: 0, x: -200, y: 0 }}
@@ -58,45 +59,50 @@ const MenuMain: React.FC = () => {
             }}
             transition={{ duration: 2, type: 'spring' }}
           >
-            <button
+            <motion.button
               onClick={() => setMenuMain(data)}
               type="button"
               className="m-1 w-20   text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5 }}
             >
               All
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterType('burger')}
               type="button"
               className="m-1 w-20 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5 }}
             >
               Burgers
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterType('fries')}
               type="button"
               className="m-1 w-20 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5 }}
             >
               Fries
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterType('hot dogs')}
               type="button"
               className="m-1 w-20 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5 }}
             >
               Hot Dogs
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterType('drinks')}
               type="button"
               className="m-1 w-20 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5 }}
             >
               Drinks
-            </button>
+            </motion.button>
           </motion.div>
         </div>
         <div>
-          <p className="font-bold font-lek text-white">Type Price</p>
+          <p className="font-bold font-sen text-white">Type Price</p>
           <motion.div
             className="flex justify-between max-w-[390px] w-full"
             initial={{ opacity: 0, x: 500, y: 0 }}
@@ -107,34 +113,38 @@ const MenuMain: React.FC = () => {
             }}
             transition={{ duration: 2, type: 'spring' }}
           >
-            <button
+            <motion.button
               onClick={() => filterPrice('$')}
               type="button"
               className="m-1  text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterPrice('$$')}
               type="button"
               className="m-1 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $$
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterPrice('$$$')}
               type="button"
               className="m-1 text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $$$
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => filterPrice('$$$$')}
               type="button"
               className="m-1 text-2xl  rounded-full text-gd hover:bg-orange-600 hover:text-white"
+              whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $$$$
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </div>
@@ -143,29 +153,34 @@ const MenuMain: React.FC = () => {
         {menuMain.map((item, index) => (
           <motion.div
             key={index}
-            className="rounded-lg over:scale-105 glow-border"
+            className="rounded-lg over:scale-105  "
             initial={{ opacity: 0, x: -500, y: 0 }}
             animate={{
               opacity: 1,
               x: 0,
               y: 0,
             }}
-            transition={{ duration: 1, type: 'spring' }}
-            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 2, type: 'spring' }}
           >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-[200px] object-cover rounded-t-lg"
-            />
-            <div className="flex justify-between px-2 py-4">
-              <p className="font-bold text-white font-lek">{item.name}</p>
-              <p>
-                <span className="bg-orange-500 text-white p-1 rounded-full">
-                  {item.price}
-                </span>
-              </p>
-            </div>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -20 }}
+              whileTap={{ scale: 0.5 }}
+              className="glow-border rounded-lg"
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-[200px]  object-cover rounded-t-lg"
+              />
+              <div className="flex justify-between px-2 py-4">
+                <p className="font-bold text-white font-sen">{item.name}</p>
+                <p>
+                  <span className="bg-orange-500 text-white p-1 rounded-full">
+                    {item.price}
+                  </span>
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
