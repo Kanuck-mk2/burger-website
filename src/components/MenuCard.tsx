@@ -17,7 +17,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
 
     <motion.div
       className="rounded-xl relative"
-      initial={{ opacity: 0, x: 500, y: 0 }}
+      initial={{ opacity: 0, x: 50, y: 0 }}
       whileInView={{
         opacity: 1,
         x: 0,

@@ -15,8 +15,8 @@ const Menu = () => {
       buttonText: 'Order Now!',
     },
     {
-      title: 'Hot Diggity Dog Days!',
-      description: 'Every Friday $3 Hot Dogs',
+      title: 'Dog Days of Summer!',
+      description: 'Every Friday $3 hot dogs throughout this summer season!',
       imageUrl: './food-item/hotdog4.jpg',
       buttonText: 'View Details',
     },

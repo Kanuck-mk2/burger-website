@@ -17,7 +17,7 @@ const MenuMain: React.FC = () => {
 
   const filterType = (category: string) => {
     setMenuMain(
-      data.filter((item: string) => {
+      data.filter((item: MenuItem) => {
         return item.category === category;
       }),
     );
@@ -25,7 +25,7 @@ const MenuMain: React.FC = () => {
 
   const filterPrice = (price: string) => {
     setMenuMain(
-      data.filter((item: string) => {
+      data.filter((item: MenuItem) => {
         return item.price === price;
       }),
     );
@@ -62,7 +62,7 @@ const MenuMain: React.FC = () => {
             <motion.button
               onClick={() => setMenuMain(data)}
               type="button"
-              className="m-1 w-20   text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              className="m-1 w-20 text-2xl text-gd hover:bg-orange-600 hover:text-white"
               whileTap={{ scale: 0.5 }}
             >
               All
@@ -116,7 +116,7 @@ const MenuMain: React.FC = () => {
             <motion.button
               onClick={() => filterPrice('$')}
               type="button"
-              className="m-1  text-2xl text-gd hover:bg-orange-600 hover:text-white"
+              className="m-1 text-2xl text-gd hover:bg-orange-600 hover:text-white"
               whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $
@@ -140,7 +140,7 @@ const MenuMain: React.FC = () => {
             <motion.button
               onClick={() => filterPrice('$$$$')}
               type="button"
-              className="m-1 text-2xl  rounded-full text-gd hover:bg-orange-600 hover:text-white"
+              className="m-1 text-2xl rounded-full text-gd hover:bg-orange-600 hover:text-white"
               whileTap={{ scale: 0.5, rotate: 720 }}
             >
               $$$$
@@ -153,7 +153,7 @@ const MenuMain: React.FC = () => {
         {menuMain.map((item, index) => (
           <motion.div
             key={index}
-            className="rounded-lg over:scale-105  "
+            className="rounded-lg over:scale-105"
             initial={{ opacity: 0, x: -500, y: 0 }}
             animate={{
               opacity: 1,
@@ -170,7 +170,7 @@ const MenuMain: React.FC = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-[200px]  object-cover rounded-t-lg"
+                className="w-full h-[200px] object-cover rounded-t-lg"
               />
               <div className="flex justify-between px-2 py-4">
                 <p className="font-bold text-white font-sen">{item.name}</p>

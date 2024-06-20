@@ -14,36 +14,36 @@ const Footer: React.FC<FooterProps> = () => {
           whileInView={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 2, type: 'spring' }}
         >
-          <li>
+          <motion.li>
             <a href="#about" className="hover:text-orange-300">
               About Us
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li>
             <a href="#menu" className="hover:text-orange-300">
               Menu
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li>
             <a href="#locations" className="hover:text-orange-300">
               Locations
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li>
             <a href="#specials" className="hover:text-orange-300">
               Specials
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li>
             <a href="#events" className="hover:text-orange-300">
               Events
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li>
             <a href="#contact" className="hover:text-orange-300">
               Contact Us
             </a>
-          </li>
+          </motion.li>
         </motion.ul>
       </div>
 
